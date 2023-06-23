@@ -1,0 +1,47 @@
+{
+  "name": "Parallel",
+  "version": "1.0.0",
+  "description": "Parallel app",
+  "main": "src/app/index.js",
+  "scripts": {
+    "serve": "webpack serve --mode=development",
+    "prettier": "prettier --config .prettierrc.json --write src/**",
+    "lint": "eslint --ext .jsx --ext .js src/",
+    "test": "npm run --prefix src/ test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier",
+      "pre-push": "yarn lint && yarn test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ilya-z/parallel.git"
+  },
+  "author": "Ilya Zaytsev",
+  "license": "ISC",
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "commitlint": "^17.6.5",
+    "eslint": "^8.43.0",
+    "html-webpack-plugin": "^5.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.0-rc.5",
+    "webpack": "^5.88.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babel-loader": "^9.1.2",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

@@ -1,0 +1,12 @@
+.idea
+
+node_modules/
+
+*.log
+*.xml
+
+.DS_Store
+build/
+coverage
+node_modules
+yarn-error.log
